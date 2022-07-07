@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Toast Application</string>
+    <string name="preference_file_key">key</string>
+    <string name="message">start</string>
+</resources>

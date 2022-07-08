@@ -16,19 +16,12 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[MyViewModel::class.java]
 
-    }
-
-    override fun onResume() {
-        super.onResume()
-
         if (viewModel.flag) {
             val sharedPref = getPreferences(Context.MODE_PRIVATE) ?: return
 
             when (sharedPref.getInt(PREF_KEY, 1)) {
                 1 -> {
                     viewModel.updateCount()
-                    Toast.makeText(this, "1", Toast.LENGTH_LONG).show()
-
                     with(sharedPref.edit()) {
                         putInt(PREF_KEY, viewModel.count)
                         apply()
@@ -38,7 +31,6 @@ class MainActivity : AppCompatActivity() {
                 2 -> {
                     viewModel.updateCount()
                     viewModel.updateCount()
-                    Toast.makeText(this, "2", Toast.LENGTH_LONG).show()
                     sharedPref.edit()
                         .putInt(PREF_KEY, viewModel.count)
                         .apply()
@@ -52,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
     }
 
     /**

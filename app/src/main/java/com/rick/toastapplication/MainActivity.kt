@@ -8,13 +8,5 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-    }
-
-    /**
-     * Чтобы не обновить значение параметра count при повороте экрана
-     * */
-    override fun onPause() {
-        super.onPause()
     }
 }
